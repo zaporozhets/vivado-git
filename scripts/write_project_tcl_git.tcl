@@ -456,6 +456,8 @@ proc wr_validate_files {} {
 
     lappend l_script_validate "  set files \[list \\"
     foreach file $l_local_files {
+      set file_no_quotes [string trim $file "\""]
+      if { [file extension $file_no_quotes] == ".prj" } { continue }
       lappend l_script_validate "   $file \\"
     }
     lappend l_script_validate "  \]"
