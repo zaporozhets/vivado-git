@@ -715,9 +715,9 @@ proc write_bd_as_proc { bd_file } {
   }
   set temp_bd_file [file join $temp_dir "temp_$temp_offset.tcl"]
   if { $a_global_vars(b_arg_no_ip_version) } {
-    write_bd_tcl -no_project_wrapper -no_ip_version -make_local -include_layout $temp_bd_file
+    write_bd_tcl -no_project_wrapper -no_ip_version -make_local $temp_bd_file
   } else {
-    write_bd_tcl -no_project_wrapper -make_local -include_layout $temp_bd_file
+    write_bd_tcl -no_project_wrapper -make_local $temp_bd_file
   }
 
   # Set non default properties for the BD
