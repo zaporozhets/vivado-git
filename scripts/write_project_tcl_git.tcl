@@ -1888,6 +1888,7 @@ proc write_files { proj_dir proj_name tcl_obj type } {
   set bc_managed_fs_filter "IS_BLOCK_CONTAINER_MANAGED == 0"
   foreach file [get_files -quiet -norecurse -of_objects [get_filesets $tcl_obj] -filter $bc_managed_fs_filter] {
     if { [file extension $file] == ".xcix" } { continue }
+    if { [file extension $file] == ".prj" } { continue }
     # Skip direct import/add of BD files if -use_bd_files is not provided
     if { [file extension $file] == ".bd" && !$a_global_vars(b_arg_use_bd_files) } { continue }
 
