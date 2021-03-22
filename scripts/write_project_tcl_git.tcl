@@ -327,6 +327,7 @@ proc write_project_tcl_script {} {
     send_msg_id Vivado-projutils-005 ERROR "failed to open file for write ($file)\n"
     return 1
   }
+  fconfigure $a_global_vars(fh) -translation lf
 
   # dump project in canonical form
   if { $a_global_vars(b_arg_dump_proj_info) } {
