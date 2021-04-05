@@ -1022,8 +1022,6 @@ proc write_specified_fileset { proj_dir proj_name filesets ignore_bc } {
               }
             } else {
               set rel_file_path "[get_relative_file_path_for_source $path [get_script_execution_dir]]"
-              # Filter out IP repositories outside of the project directory
-              if { [string first .. $rel_file_path] == 0 } { continue }
               set path "\[file normalize \"\$origin_dir/$rel_file_path\"\]"
               lappend path_list $path
               if { [lsearch $l_validate_repo_paths $path] == -1 } {
